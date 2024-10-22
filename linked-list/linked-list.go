@@ -71,3 +71,23 @@ func (ll *LinkedList) RemoveEndNode() {
 	}
 	previous.Next = nil
 }
+
+func (ll *LinkedList) InsertAtGivenPosition(value string, position int) {
+	newNode := &Node{Data: value}
+	if position <= 0 {
+		return
+	}
+	if position == 1 {
+		newNode.Next = ll.Head
+		ll.Head = newNode
+	}
+	previous := ll.Head
+	count := 1
+	for count != position-1 {
+		previous = previous.Next
+		count++
+	}
+	current := previous.Next
+	newNode.Next = current
+	previous.Next = newNode
+}
