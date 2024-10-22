@@ -51,3 +51,10 @@ func (ll *LinkedList) Count() {
 	}
 	fmt.Println(count)
 }
+
+func (ll *LinkedList) RemoveFirstNode() {
+	if ll.Head == nil {
+		return
+	}
+	ll.Head = ll.Head.Next
+}
