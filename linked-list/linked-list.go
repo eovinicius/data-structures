@@ -58,3 +58,16 @@ func (ll *LinkedList) RemoveFirstNode() {
 	}
 	ll.Head = ll.Head.Next
 }
+
+func (ll *LinkedList) RemoveEndNode() {
+	if ll.Head == nil || ll.Head.Next == nil {
+		return
+	}
+
+	previous := ll.Head
+
+	for previous.Next.Next != nil {
+		previous = previous.Next
+	}
+	previous.Next = nil
+}
