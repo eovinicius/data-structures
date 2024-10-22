@@ -109,3 +109,18 @@ func (ll *LinkedList) RemoveNodeGivenPosition(position int) {
 	previous.Next = current.Next
 	current = nil
 }
+
+func (ll *LinkedList) FindElement(element string) int {
+	current := ll.Head
+	count := 1
+
+	for current != nil {
+		if element != current.Data {
+			current = current.Next
+			count++
+		} else {
+			return count
+		}
+	}
+	return -1
+}
