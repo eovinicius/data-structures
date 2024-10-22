@@ -19,3 +19,16 @@ func (n *Node) Print() {
 	}
 	fmt.Print("null")
 }
+
+func (ll *LinkedList) InsertAtEnd(value string) {
+	newNode := &Node{Data: value, Next: nil}
+	if ll.Head == nil {
+		ll.Head = newNode
+		return
+	}
+	current := ll.Head
+	for current.Next != nil {
+		current = current.Next
+	}
+	current.Next = newNode
+}
