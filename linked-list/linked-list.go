@@ -41,3 +41,13 @@ func (ll *LinkedList) Print() {
 	}
 	fmt.Print("null")
 }
+
+func (ll *LinkedList) Count() {
+	current := ll.Head
+	count := 0
+	for current != nil {
+		count++
+		current = current.Next
+	}
+	fmt.Println(count)
+}
