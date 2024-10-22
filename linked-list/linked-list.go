@@ -32,3 +32,12 @@ func (ll *LinkedList) InsertAtEnd(value string) {
 	}
 	current.Next = newNode
 }
+
+func (ll *LinkedList) Print() {
+	current := ll.Head
+	for current != nil {
+		fmt.Print(current.Data, " -> ")
+		current = current.Next
+	}
+	fmt.Print("null")
+}
