@@ -91,3 +91,21 @@ func (ll *LinkedList) InsertAtGivenPosition(value string, position int) {
 	newNode.Next = current
 	previous.Next = newNode
 }
+
+func (ll *LinkedList) RemoveNodeGivenPosition(position int) {
+	if position <= 0 {
+		return
+	}
+	if position == 1 {
+		ll.Head = ll.Head.Next
+	}
+	previous := ll.Head
+	count := 1
+	for count != position-1 {
+		previous = previous.Next
+		count++
+	}
+	current := previous.Next
+	previous.Next = current.Next
+	current = nil
+}
