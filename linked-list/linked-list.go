@@ -124,3 +124,17 @@ func (ll *LinkedList) FindElement(element string) int {
 	}
 	return -1
 }
+
+func (ll *LinkedList) ReverseList() {
+	current := ll.Head
+	var previous *Node
+	var next *Node
+
+	for current != nil {
+		next = current.Next
+		current.Next = previous
+		previous = current
+		current = next
+	}
+	ll.Head = previous
+}
