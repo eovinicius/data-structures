@@ -1,5 +1,7 @@
 package tree
 
+import "fmt"
+
 type TreeNode struct {
 	Data  int
 	Left  *TreeNode
@@ -16,4 +18,13 @@ func Insert(node *TreeNode, data int) *TreeNode {
 		node.Right = Insert(node.Right, data)
 	}
 	return node
+}
+
+func PreOrder(node *TreeNode) {
+	if node == nil {
+		return
+	}
+	fmt.Printf("%d ", node.Data)
+	PreOrder(node.Left)
+	PreOrder(node.Right)
 }
