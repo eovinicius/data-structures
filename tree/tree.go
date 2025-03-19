@@ -37,3 +37,12 @@ func InOrder(node *TreeNode) {
 	fmt.Printf("%d ", node.Data)
 	PreOrder(node.Right)
 }
+
+func PosOrder(node *TreeNode) {
+	if node == nil {
+		return
+	}
+	PreOrder(node.Left)
+	PreOrder(node.Right)
+	fmt.Printf("%d ", node.Data)
+}
