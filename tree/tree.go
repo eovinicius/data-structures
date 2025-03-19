@@ -28,3 +28,12 @@ func PreOrder(node *TreeNode) {
 	PreOrder(node.Left)
 	PreOrder(node.Right)
 }
+
+func InOrder(node *TreeNode) {
+	if node == nil {
+		return
+	}
+	PreOrder(node.Left)
+	fmt.Printf("%d ", node.Data)
+	PreOrder(node.Right)
+}
